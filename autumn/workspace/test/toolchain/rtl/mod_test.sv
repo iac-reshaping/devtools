@@ -32,7 +32,7 @@ module mod_test (
       value_q  <= value_i;
       value_q2 <= value_q;
 
-      /* 
+      /*
       // The following is equivalent to the above.
       value_q2 <= value_q;
       value_q  <= value_i;
