@@ -46,7 +46,7 @@ rm -rf verilator
 
 git clone https://github.com/verilator/verilator verilator
 cd verilator
-git checkout v4.214
+git checkout v4.226
 autoconf
 ./configure
 make -j "$(nproc)"
