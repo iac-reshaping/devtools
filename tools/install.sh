@@ -94,6 +94,7 @@ fi
 
 echo "Installing dependencies"
 if [ -z "$LOCAL_DEV" ]; then
+    cd "$TOOLS_FOLDER"
     "$POST_RUN_SCRIPT"
 else
     echo "Local install tool development mode activated"
