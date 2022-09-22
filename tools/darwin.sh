@@ -15,10 +15,11 @@ brew install verilator
 echo "Installing gtkwave"
 brew install --cask gtkwave
 
-echo "Installing additional deps..."
+echo "Installing python..."
 brew install python
 python3 -m ensurepip
 
+echo "Installing additional deps..."
 brew install make cmake \
     gcc llvm \
     bison flex bc autoconf \
