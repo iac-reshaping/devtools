@@ -19,8 +19,9 @@ echo "Installing additional deps..."
 brew install python
 python3 -m ensurepip
 
-brew install make llvm cmake bison \
-    flex bc autoconf \
+brew install make cmake \
+    gcc llvm \
+    bison flex bc autoconf \
     qemu
 
 echo "Adding RISC-V toolchain repo"
