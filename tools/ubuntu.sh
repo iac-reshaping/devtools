@@ -35,7 +35,8 @@ sudo apt install -y \
     zlib1g-dev \
     qemu qemu-user \
     gcc-riscv64-unknown-elf \
-    gdb-multiarch
+    gdb-multiarch \
+    gtkwave
 
 # Install Verilator
 echo "Installing Verilator"
