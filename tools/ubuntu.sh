@@ -19,6 +19,7 @@ sudo apt install -y git \
     bc \
     bison \
     gcc \
+    clang \
     make
 
 sudo apt install -y \
