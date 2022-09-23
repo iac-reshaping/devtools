@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file (with Verilator)",
+            "label": "Build testbench",
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
@@ -10,13 +10,13 @@
                 "-I",
                 "${workspaceFolder}/obj_dir",
                 "-I",
-                "/usr/local/share/verilator/include",
-                "/usr/local/share/verilator/include/verilated.cpp",
-                "/usr/local/share/verilator/include/verilated_vcd_c.cpp",
-                "${file}",
-                "${workspaceFolder}/obj_dir/Vmod_cpu__ALL.cpp",
+                "${config:verilator.root}/include",
+                "${config:verilator.root}/include/verilated.cpp",
+                "${config:verilator.root}/include/verilated_vcd_c.cpp",
+                "${workspaceFolder}/obj_dir/Vmod_test__ALL.cpp",
+                "${workspaceFolder}/test/tb_test.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/obj_dir/tb_test"
             ],
             "options": {
                 "cwd": "${fileDirname}"
