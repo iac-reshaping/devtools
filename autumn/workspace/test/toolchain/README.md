@@ -24,7 +24,7 @@ position        tick    value_i value_o
 Testbench exiting after reaching MAX_TICKS
 ```
 
-If you see the same output, your Verilator and g++ are setup correctly!
+If you see the same output, your Verilator and g++/clang++ are setup correctly!
 
 > To understand what happens when you run `make test`, take a look at the `test:` rule located in the [Makefile](./Makefile).
 >
