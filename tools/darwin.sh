@@ -30,3 +30,6 @@ brew tap riscv-software-src/riscv
 
 echo "Installing RISC-V toolchain"
 brew install riscv-tools
+
+echo "Testing RISC-V toolchain install"
+brew test riscv-tools
