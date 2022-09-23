@@ -24,7 +24,7 @@
 class TB
 {
 public:
-    unsigned long m_tickcount;
+    uint64_t m_tickcount;
     VerilatedVcdC *m_trace;
     Vmod_test *m_core;
 
