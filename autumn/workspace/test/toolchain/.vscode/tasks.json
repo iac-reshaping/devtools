@@ -6,6 +6,18 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
+                "-faligned-new",
+                "-fcf-protection=none",
+                "-Wno-bool-operation",
+                "-Wno-tautological-bitwise-compare",
+                "-Wno-parentheses-equality",
+                "-Wno-sign-compare",
+                "-Wno-uninitialized",
+                "-Wno-unused-but-set-variable",
+                "-Wno-unused-parameter",
+                "-Wno-unused-variable",
+                "-Wno-shadow",
+                "-std=gnu++14",
                 "-g",
                 "-I",
                 "${workspaceFolder}/obj_dir",
@@ -19,7 +31,7 @@
                 "${workspaceFolder}/obj_dir/tb_test"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
