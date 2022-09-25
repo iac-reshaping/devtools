@@ -1,0 +1,29 @@
+name: Build RISC-V GNU Toolchain
+
+on: workflow_dispatch
+
+jobs:
+  mac_os_12_x86:
+    runs-on: macos-12
+    steps:
+      - name: Install deps
+        run: |
+          brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat
+          brew tap discoteq/discoteq
+          brew install flock
+
+      - name: Build riscv-gnu-toolchain
+        run: |
+          git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain
+          mkdir riscv
+          cd riscv-gnu-toolchain
+          ./configure --prefix="$(dirname $(pwd))/riscv" --enable-multilib
+          make
+          cd ..
+          tar -czf riscv-gnu-toolchain-apple-x86.tar.gz riscv
+
+      - name: Upload toolchain artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: riscv-gnu-toolchain-apple-x86.tar.gz
+          path: riscv-gnu-toolchain-apple-x86.tar.gz
