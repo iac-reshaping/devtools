@@ -104,7 +104,7 @@ fi
 
 echo "IAC Devtools Installation complete..."
 echo "Make sure VS Code is installed then run the following. Make sure to mark the workspace as trusted and install the recommended extensions when prompted"
-printf "\n================\n%s\n================" "code ${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace"
+printf "\n================\n%s\n================\n" "code ${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace"
 if ! which code &>/dev/null; then
     echo "VS Code does not appear to be installed..."
 else
