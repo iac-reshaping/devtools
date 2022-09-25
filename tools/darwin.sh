@@ -36,7 +36,7 @@ if [[ $(uname -m) == 'arm64' ]]; then
     sudo tar -xzf riscv-gnu-toolchain.tar.gz --directory /opt
     export PATH="/opt/riscv/bin:$PATH"
     # shellcheck disable=SC2016
-    echo 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.zprofile
+    printf '\n%s' 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.zprofile
 else
     echo "[Detected Platform] x86-64 Apple"
     brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat
@@ -62,7 +62,7 @@ else
     sudo mkdir -p /opt/riscv
     export PATH="/opt/riscv/bin:$PATH"
     # shellcheck disable=SC2016
-    echo 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.zprofile
+    printf '\n%s' 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.zprofile
     ./configure --prefix=/opt/riscv --enable-multilib
     sudo make
 fi
