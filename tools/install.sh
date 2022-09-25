@@ -108,5 +108,8 @@ printf "\n================\n%s\n================\n\n" "code ${TOOLS_FOLDER}/autu
 if ! which code &>/dev/null; then
     echo "VS Code does not appear to be installed..."
 else
+    echo "Installing extensions..."
+    # shellcheck disable=SC2002
+    cat "${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace" | jq -r '.extensions.recommendations | .[]' | xargs -L1 code --install-extension
     code "${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace"
 fi
