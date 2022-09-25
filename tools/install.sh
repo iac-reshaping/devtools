@@ -88,8 +88,7 @@ else
     echo "Updating the iac devtools repository"
     cd "$TOOLS_FOLDER"
     git status
-    git pull
-    git pull --recurse-submodules
+    git pull --ff-only
 fi
 
 echo "Installing dependencies"
