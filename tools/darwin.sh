@@ -25,7 +25,7 @@ echo "Installing additional deps..."
 brew install make cmake \
     gcc llvm \
     bison flex bc autoconf \
-    qemu
+    qemu jq
 
 echo "Installing symlink to Verilator in /usr/local/share/verilator... this may require your password..."
 verilator_root_path="$(verilator -getenv VERILATOR_ROOT)"

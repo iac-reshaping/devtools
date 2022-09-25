@@ -37,7 +37,8 @@ sudo apt install -y \
     qemu qemu-user \
     gcc-riscv64-unknown-elf \
     gdb-multiarch \
-    gtkwave
+    gtkwave \
+    jq
 
 # Install Verilator
 echo "Installing Verilator"
@@ -55,3 +56,24 @@ cd ..
 rm -rf verilator
 
 verilator --version
+
+# echo "Installing riscv-isa-sim"
+# sudo apt install device-tree-compiler
+
+# cd /tmp
+# rm -rf riscv-isa-sim
+
+# riscv_tools_bin_dir=$(dirname "$(which riscv64-unknown-elf-gcc)")
+# riscv_tools_dir=$(dirname "${riscv_tools_bin_dir}")
+
+# git clone https://github.com/riscv-software-src/riscv-isa-sim.git riscv-isa-sim
+# cd riscv-isa-sim
+
+# git checkout v1.1.0
+# mkdir build
+# cd build
+# ../configure --prefix="${riscv_tools_dir}"
+# make
+# sudo make install
+
+# spike --help 2>&1 | head -n 1
