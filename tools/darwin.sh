@@ -48,3 +48,13 @@ rm -rf riscv-gnu-toolchain.tar.gz
 
 echo "riscv-gnu-toolchain installed..."
 riscv64-unknown-elf-gcc --version
+
+if ! which code &>/dev/null; then
+    if ls "/Applications/Visual Studio Code.app/" &>/dev/null; then
+        echo "VS Code found on system but not in PATH"
+        echo "Installing symlink for VS Code... this may require your password..."
+        sudo ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" /usr/local/bin/code
+    else
+        echo "VS Code not found"
+    fi
+fi
