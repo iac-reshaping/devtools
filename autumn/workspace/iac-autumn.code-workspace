@@ -12,8 +12,7 @@
     ],
     "settings": {
         "editor.formatOnSave": true,
-        "systemverilog.launchConfigurationVerilator": "verilator -sv --lint-only --language 1800-2017 --Wall -Irtl",
-        "verilator.root": "/usr/local/share/verilator"
+        "systemverilog.launchConfigurationVerilator": "verilator -sv --lint-only --language 1800-2017 --Wall -Irtl"
     },
     "extensions": {
         "recommendations": [

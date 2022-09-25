@@ -27,7 +27,13 @@ brew install make cmake \
     bison flex bc autoconf \
     qemu
 
-echo "Installing RISC-V toolchain"
+echo "Installing symlink to Verilator in /usr/local/share/verilator... this may require your password..."
+verilator_root_path="$(verilator -getenv VERILATOR_ROOT)"
+sudo mkdir -p /usr/local/share
+sudo ln -sfn "${verilator_root_path}" /usr/local/share/verilator
+ls -lah /usr/local/share/verilator
+
+echo "Installing RISC-V toolchain... this may require your password..."
 cd "${IAC_FOLDER}"
 
 arch_name=$(uname -m)
