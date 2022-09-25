@@ -101,7 +101,6 @@ else
     "$POST_RUN_SCRIPT"
 fi
 
-echo "IAC Devtools Installation complete..."
 echo "Make sure VS Code is installed then run the following. Make sure to mark the workspace as trusted and install the recommended extensions when prompted"
 printf "\n================\n%s\n================\n\n" "code ${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace"
 if ! which code &>/dev/null; then
@@ -112,3 +111,5 @@ else
     cat "${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace" | jq -r '.extensions.recommendations | .[]' | xargs -L1 code --install-extension
     code "${TOOLS_FOLDER}/autumn/workspace/iac-autumn.code-workspace"
 fi
+
+echo "IAC Devtools Installation complete..."
