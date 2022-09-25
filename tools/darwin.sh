@@ -6,7 +6,7 @@ echo () {
     printf "\n%b\n" "[iac] $1"
 }
 
-IAC_FOLDER="$HOME/iac"
+IAC_FOLDER="$HOME/Documents/iac"
 
 echo "Running brew update"
 brew update

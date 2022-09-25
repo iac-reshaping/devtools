@@ -6,7 +6,7 @@ echo () {
     printf "\n%b\n" "[iac] $1"
 }
 
-IAC_FOLDER="$HOME/iac"
+IAC_FOLDER="$HOME/Documents/iac"
 REPO_NAME="devtools"
 TOOLS_FOLDER="$IAC_FOLDER/$REPO_NAME"
 POST_RUN_SCRIPT=""
