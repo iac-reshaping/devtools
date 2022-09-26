@@ -35,8 +35,6 @@ sudo apt install -y \
     zlib1g \
     zlib1g-dev \
     qemu qemu-user \
-    gcc-riscv64-unknown-elf \
-    gdb-multiarch \
     gtkwave \
     jq
 
@@ -57,23 +55,13 @@ rm -rf verilator
 
 verilator --version
 
-# echo "Installing riscv-isa-sim"
-# sudo apt install device-tree-compiler
-
-# cd /tmp
-# rm -rf riscv-isa-sim
-
-# riscv_tools_bin_dir=$(dirname "$(which riscv64-unknown-elf-gcc)")
-# riscv_tools_dir=$(dirname "${riscv_tools_bin_dir}")
-
-# git clone https://github.com/riscv-software-src/riscv-isa-sim.git riscv-isa-sim
-# cd riscv-isa-sim
-
-# git checkout v1.1.0
-# mkdir build
-# cd build
-# ../configure --prefix="${riscv_tools_dir}"
-# make
-# sudo make install
-
-# spike --help 2>&1 | head -n 1
+echo "Installing riscv-gnu-toolchain... this may require your password..."
+cd /tmp
+rm -rf riscv-gnu-toolchain.tar.gz
+curl --output riscv-gnu-toolchain.tar.gz -L "https://github.com/iac-reshaping/devtools/releases/download/v1.0.0-rc.1/riscv-gnu-toolchain-2022-09-21-Ubuntu-22.04.tar.gz"
+sudo rm -rf /opt/riscv
+sudo tar -xzf riscv-gnu-toolchain.tar.gz --directory /opt
+export PATH="/opt/riscv/bin:$PATH"
+# shellcheck disable=SC2016
+printf '\n%s' 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.bashrc
+rm -rf riscv-gnu-toolchain.tar.gz
