@@ -33,7 +33,7 @@ At the end of the lab you will have installed the following tools:
     You may have to enter your password a few times while everything installs.
 
     Depending on your Internet connection, this may take up to 15 minutes.
-9) VS Code should automatically open after the previous step. If not, open the *workspace* at `~/iac/devtools/autumn/workspace/iac-autumn.code-workspace` and follow the instructions in the [toolchain project](https://github.com/iac-reshaping/devtools/blob/main/autumn/workspace/test/toolchain/README.md) to test that your tools are functioning correctly. To do this open VS Code, and select "File->Open Workspace from File...", then navigate to the workspace file.
+9) VS Code should automatically open after the previous step. If not, open the *workspace* at `~/iac/devtools/autumn/workspace/iac-autumn.code-workspace` and follow the instructions in the [toolchain project](https://github.com/iac-reshaping/devtools/blob/main/autumn/workspace/test/toolchain) to test that your tools are functioning correctly. To do this open VS Code, and select "File->Open Workspace from File...", then navigate to the workspace file.
 
 ### Mac OS Monterey and Ubuntu 22.04
 
@@ -47,7 +47,7 @@ At the end of the lab you will have installed the following tools:
     You may have to enter your password a few times while everything installs.
 
     Depending on your Internet connection, this may take up to 15 minutes.
-3) VS Code should automatically open after the previous step. If not, open the *workspace* at `~/iac/devtools/autumn/workspace/iac-autumn.code-workspace` and follow the instructions in the [toolchain project](https://github.com/iac-reshaping/devtools/blob/main/autumn/workspace/test/toolchain/README.md) to test that your tools are functioning correctly. To do this open VS Code, and select "File->Open Workspace from File...", then navigate to the workspace file.
+3) VS Code should automatically open after the previous step. If not, open the *workspace* at `~/iac/devtools/autumn/workspace/iac-autumn.code-workspace` and follow the instructions in the [toolchain project](https://github.com/iac-reshaping/devtools/blob/main/autumn/workspace/test/toolchain) to test that your tools are functioning correctly. To do this open VS Code, and select "File->Open Workspace from File...", then navigate to the workspace file.
 
 ## Behind the scenes
 
