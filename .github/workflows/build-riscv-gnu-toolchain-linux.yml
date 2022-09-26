@@ -15,6 +15,7 @@ jobs:
           git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain
           mkdir riscv
           cd riscv-gnu-toolchain
+          git checkout 2022-09-21
           ./configure --prefix="$(dirname $(pwd))/riscv" --enable-multilib
           make
           cd ..
@@ -25,3 +26,26 @@ jobs:
         with:
           name: riscv-gnu-toolchain-ubuntu-22.04.tar.gz
           path: riscv-gnu-toolchain-ubuntu-22.04.tar.gz
+  ubuntu_20_04:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install deps
+        run: |
+          sudo apt-get install -y autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
+
+      - name: Build riscv-gnu-toolchain
+        run: |
+          git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain
+          mkdir riscv
+          cd riscv-gnu-toolchain
+          git checkout 2022-09-21
+          ./configure --prefix="$(dirname $(pwd))/riscv" --enable-multilib
+          make
+          cd ..
+          tar -czf riscv-gnu-toolchain-ubuntu-20.04.tar.gz riscv
+
+      - name: Upload toolchain artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: riscv-gnu-toolchain-ubuntu-20.04.tar.gz
+          path: riscv-gnu-toolchain-ubuntu-20.04.tar.gz
