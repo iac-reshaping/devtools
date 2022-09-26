@@ -27,7 +27,7 @@ Testbench exiting after reaching MAX_TICKS
 ```bash
 iac@host:~/Documents/iac/devtools/autumn/workspace/test/toolchain$ make tb_toolchain
 ==== Building Toolchain test =====
-obj_dir/tb_toolchain: ELF 32-bit LSB executable, UCB RISC-V, soft-float ABI, version 1 (SYSV), statically linked, not stripped
+obj_dir/tb_toolchain: ELF 32-bit LSB executable, UCB RISC-V, single-float ABI, version 1 (SYSV), statically linked, not stripped
 ```
 
 If you see the same outputs, your Verilator and riscv-gnu-toolchain are setup correctly!
