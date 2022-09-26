@@ -4,7 +4,7 @@ Welcome to Lab 0 of Autumn Term [Instruction Architectures and Compilers](http:/
 
 In this lab, you will install the tools needed for both the labs and coursework.
 
-At the end of the lab you will have installed the following tools
+At the end of the lab you will have installed the following tools:
 
 - [VS Code](https://code.visualstudio.com/Download)
 - [Verilator](https://github.com/verilator/verilator) which converts SystemVerilog HDL into a C++ equivalent model
