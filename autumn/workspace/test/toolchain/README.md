@@ -30,6 +30,6 @@ If you see the same output, your Verilator and g++/clang++ are setup correctly!
 >
 > The commands under that rule convert [rtl/mod_test.sv](./rtl/mod_test.sv) to a C++ model of the SystemVerilog HDL, using Verilator. 
 >
-> Finally, the testbench located in [test/tb_test.cpp](./test/tb_test.cpp) drives the simulation to produce the above output and a [trace.vcd](./trace.vcd) file which records the values of all the Verilog signals at each simulator step.
+> Finally, the testbench located in [test/tb_verilator.cpp](./test/tb_verilator.cpp) drives the simulation to produce the above output and a [trace.vcd](./trace.vcd) file which records the values of all the Verilog signals at each simulator step.
 
 Once everything works, you can learn how to build your own Verilator testbench from scratch by following the labs.

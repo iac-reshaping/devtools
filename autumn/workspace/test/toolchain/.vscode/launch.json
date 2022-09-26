@@ -9,7 +9,7 @@
             "request": "launch",
             "type": "cppdbg",
             "preLaunchTask": "Build testbench",
-            "program": "${workspaceFolder}/obj_dir/tb_test",
+            "program": "${workspaceFolder}/obj_dir/tb_verilator",
             "cwd": "${workspaceFolder}"
         }
     ]
