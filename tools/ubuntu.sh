@@ -67,6 +67,8 @@ curl --output riscv-gnu-toolchain.tar.gz -L "${tools_download_link}"
 sudo rm -rf /opt/riscv
 sudo tar -xzf riscv-gnu-toolchain.tar.gz --directory /opt
 export PATH="/opt/riscv/bin:$PATH"
-# shellcheck disable=SC2016
-printf '\n%s' 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.bashrc
+if ! grep "/opt/riscv/bin" ~/.bashrc > /dev/null; then
+    # shellcheck disable=SC2016
+    printf '\n%s' 'export PATH="/opt/riscv/bin:$PATH"' >> ~/.bashrc
+fi
 rm -rf riscv-gnu-toolchain.tar.gz
