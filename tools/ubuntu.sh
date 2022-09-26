@@ -57,10 +57,9 @@ verilator --version
 
 echo "Installing riscv-gnu-toolchain... this may require your password..."
 # shellcheck disable=SC1091
-ubuntu_version=$( . /etc/os-release ; echo "$VERSION_ID" )
+ubuntu_version=$( . /etc/os-release ; echo "$VERSION_ID" | tr -d '\n' )
 echo "Got Ubuntu version: ${ubuntu_version}"
 tools_download_link="https://github.com/iac-reshaping/devtools/releases/download/v1.0.0-rc.1/riscv-gnu-toolchain-2022-09-21-Ubuntu-${ubuntu_version}.tar.gz"
-echo "Got Download Link: ${tools_download_link}"
 
 cd /tmp
 rm -rf riscv-gnu-toolchain.tar.gz
