@@ -17,7 +17,8 @@ jobs:
           git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain
           mkdir riscv
           cd riscv-gnu-toolchain
-          ./configure --prefix="$(dirname $(pwd))/riscv" --enable-multilib
+          git checkout 2022.09.21
+          ./configure --prefix="$(dirname $(pwd))/riscv" --with-multilib-generator="rv32i-ilp32--;rv32iac-ilp32--;rv32im-ilp32--;rv32imc-ilp32--;rv32imf-ilp32--;rv32imf-ilp32f--;rv32imac-ilp32--;rv32imafc-ilp32f--;rv64imac-lp64--;rv64imafdc-lp64d--"
           make
           cd ..
           tar -czf riscv-gnu-toolchain-apple-x86.tar.gz riscv
