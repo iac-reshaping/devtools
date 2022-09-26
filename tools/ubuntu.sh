@@ -56,9 +56,11 @@ rm -rf verilator
 verilator --version
 
 echo "Installing riscv-gnu-toolchain... this may require your password..."
+# shellcheck disable=SC1091
+ubuntu_version=$( . /etc/os-release ; echo "$VERSION_ID" )
 cd /tmp
 rm -rf riscv-gnu-toolchain.tar.gz
-curl --output riscv-gnu-toolchain.tar.gz -L "https://github.com/iac-reshaping/devtools/releases/download/v1.0.0-rc.1/riscv-gnu-toolchain-2022-09-21-Ubuntu-22.04.tar.gz"
+curl --output riscv-gnu-toolchain.tar.gz -L "https://github.com/iac-reshaping/devtools/releases/download/v1.0.0-rc.1/riscv-gnu-toolchain-2022-09-21-Ubuntu-${ubuntu_version}.tar.gz"
 sudo rm -rf /opt/riscv
 sudo tar -xzf riscv-gnu-toolchain.tar.gz --directory /opt
 export PATH="/opt/riscv/bin:$PATH"
