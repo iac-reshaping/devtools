@@ -3,12 +3,12 @@ name: Build RISC-V GNU Toolchain Linux
 on: workflow_dispatch
 
 jobs:
-  mac_os_12_x86:
+  ubuntu_22_04:
     runs-on: ubuntu-22.04
     steps:
       - name: Install deps
         run: |
-          apt-get install -y autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
+          sudo apt-get install -y autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
 
       - name: Build riscv-gnu-toolchain
         run: |
